@@ -11,10 +11,7 @@ const { defineConfig } = require('@vue/cli-service');
 //     });
 // }
 
-
 module.exports = defineConfig({
-  lintOnSave:false,
-  transpileDependencies: true,
   productionSourceMap: false, // 去除生产环境的 productionSourceMap
   publicPath: './',
   chainWebpack: (config) => {
@@ -29,4 +26,4 @@ module.exports = defineConfig({
     // const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
     // types.forEach((type) => addStyleResource(config.module.rule('less').oneOf(type)));
   },
-})
+});

@@ -9,17 +9,20 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-Vue.config.productionTip = false
-
 Vue.use(ElementUI);
 Vue.prototype.$video = videojs;
+Vue.config.productionTip = false;
 Vue.use(VueCompositionAPI);
+
 Vue.use(PiniaVuePlugin);
 const pinia = createPinia();
+
+
+Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  render: h => h(App),
-  pinia
+  pinia,
+  render: h => h(App)
 }).$mount('#app')
