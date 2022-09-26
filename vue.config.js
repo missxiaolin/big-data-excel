@@ -2,16 +2,17 @@
 const path = require('path');
 const { defineConfig } = require('@vue/cli-service');
 
-// function addStyleResource(rule) {
-//   rule
-//     .use('style-resource')
-//     .loader('style-resources-loader')
-//     .options({
-//       patterns: [path.resolve(__dirname, './src/styles/variables/*.less'), path.resolve(__dirname, './src/styles/mixins/*.less')],
-//     });
-// }
+function addStyleResource(rule) {
+  rule
+    .use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [path.resolve(__dirname, './src/styles/variables/*.less'), path.resolve(__dirname, './src/styles/mixins/*.less')],
+    });
+}
 
 module.exports = defineConfig({
+  lintOnSave:false,
   productionSourceMap: false, // 去除生产环境的 productionSourceMap
   publicPath: './',
   chainWebpack: (config) => {
@@ -23,7 +24,7 @@ module.exports = defineConfig({
     // 配置别名
     config.resolve.alias.set('@', path.resolve('src'));
     // 自动引入全局样式
-    // const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
-    // types.forEach((type) => addStyleResource(config.module.rule('less').oneOf(type)));
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
+    types.forEach((type) => addStyleResource(config.module.rule('less').oneOf(type)));
   },
 });
