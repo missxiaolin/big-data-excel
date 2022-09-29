@@ -30,6 +30,7 @@ export default class VideoDemo extends Vue {
     private volume = 0.5;
     private src = '/test.mp4';
 
+    // 计算属性
     public video() {
         return this.$refs.video;
     }
