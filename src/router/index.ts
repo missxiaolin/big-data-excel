@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import HomeView from '@/views/Import.vue';
 import VideoDemo from '../views/VideoDemo.vue';
 
 Vue.use(VueRouter)
@@ -13,6 +14,11 @@ const routes: Array<RouteConfig> = [
     path: '/video',
     name: 'video',
     component: VideoDemo,
+  },
+  {
+    path: '/import',
+    name: 'Import',
+    component: HomeView,
   },
   {
     path: '/export',
