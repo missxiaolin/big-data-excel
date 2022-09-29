@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+import VideoDemo from '../views/VideoDemo.vue';
 
 Vue.use(VueRouter)
 
@@ -7,6 +8,11 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     redirect: '/export',
+  },
+  {
+    path: '/video',
+    name: 'video',
+    component: VideoDemo,
   },
   {
     path: '/export',

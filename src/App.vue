@@ -3,6 +3,7 @@
     <nav>
       <!-- <router-link to="/import">导入 Excel 数据</router-link> | <router-link to="/export">导出 Excel 文件</router-link> | -->
       <router-link to="/export">导出 Excel 文件</router-link> |
+      <router-link to="/video">视频播放</router-link>
     </nav>
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive">
