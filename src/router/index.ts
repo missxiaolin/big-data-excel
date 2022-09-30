@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '@/views/Import.vue';
+import AnchorPonit from '@/views/AnchorPonit.vue';
 import VideoDemo from '../views/VideoDemo.vue';
 
 Vue.use(VueRouter)
@@ -19,6 +20,11 @@ const routes: Array<RouteConfig> = [
     path: '/import',
     name: 'Import',
     component: HomeView,
+  },
+  {
+    path: '/anchor',
+    name: 'Anchor',
+    component: AnchorPonit,
   },
   {
     path: '/export',
