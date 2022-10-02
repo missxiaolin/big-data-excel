@@ -23,6 +23,22 @@ export default class BigData extends Vue {
     private src = 'https://pics7.baidu.com/feed/ae51f3deb48f8c5429f2b0f0cd84b2ffe1fe7f00.jpeg?token=3aada23a6ce4d48a6087314bb9514688'
     private pending = false
     private csvProcess = 0
+
+    // 创建模拟数据
+    async exportCsvBtn() {
+        try {
+            this.pending = true;
+            await exportCsv(10000 * 100, 2000, (process) => {
+                // 进度条更新
+                console.log('process', process);
+                this.csvProcess = process;
+            });
+        } catch (error) {
+            // alert(error);
+        } finally {
+            this.pending = false;
+        }
+    }
 }
 </script>
     
