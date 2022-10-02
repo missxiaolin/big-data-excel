@@ -12,6 +12,20 @@
     </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component({
+    components: {
+    },
+})
+export default class BigData extends Vue {
+    private src = 'https://pics7.baidu.com/feed/ae51f3deb48f8c5429f2b0f0cd84b2ffe1fe7f00.jpeg?token=3aada23a6ce4d48a6087314bb9514688'
+    private pending = false
+    private csvProcess = 0
+}
+</script>
+    
 
 <style>
 .title {
