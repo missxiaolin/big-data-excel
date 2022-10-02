@@ -6,11 +6,12 @@
       <router-link to="/video">视频播放</router-link>
     </nav>
     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive">
+      <!-- <router-view v-if="$route.meta.keepAlive"> -->
         <!-- 这里是会被缓存的视图组件，比如 Home！ -->
-      </router-view>
+      <!-- </router-view> -->
+      <router-view></router-view>
     </keep-alive>
-    <router-view v-if="!$route.meta?.keepAlive"></router-view>
+    <!-- <router-view v-if="!$route.meta?.keepAlive"></router-view> -->
   </div>
 </template>
 
